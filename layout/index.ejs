@@ -1,0 +1,29 @@
+<div class="col-3 sidebar sidebar-offcanvas">
+    <%- partial("_widget/bio") %>
+</div>
+<%
+var next_year = date(Date.now(), 'YYYY') + 1;
+var data = {};
+page.posts.each(function(item){
+    year = item.date.format('YYYY');
+    if (year != next_year) {
+        next_year = year;
+        data[year] = [];
+    }
+    data[year].push(item);
+});
+years = Object.keys(data).sort(function(a, b){ return b-a; })
+%>
+<div class="col-9 main-content row">
+    <% years.forEach(function(year) { %>
+        <h2><%= year %></h2>
+    <% data[year].forEach(function(item) { %>
+        <div class="col-4 post-entry">
+            <h5 class="index-title">
+                <a href="<%- url_for(item.path) %>"><%= item.title %></a>
+            </h5>
+            <div class="post-date"><%= item.date.format(config.date_format) %></div>
+            <p class="index-desc"><% if (item.description) { %><%= item.description %><% } else { %><% } %></p>
+        </div>
+    <% } ) })%>
+</div>

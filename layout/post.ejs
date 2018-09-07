@@ -1,0 +1,37 @@
+<div class="col-3 sidebar-offcanvas">
+    <%- partial("_widget/toc") %>
+</div>
+<%
+    var categories = [];
+    var tags = [];
+    page.categories.forEach(function(c) {
+        categories.push('<a href="' + url_for(c.path) +'">' + c.name + '</a>');
+    });
+    page.tags.forEach(function(t) {
+        tags.push('<a href="' + url_for(t.path) +'">' + t.name + '</a>');
+    });
+%>
+<div class="col-9 main-content post-content row">
+    <div class="post-header">
+        <h1><%= page.title %></h1>
+        <p class="meta-line">
+            <% if (page.categories && page.categories.length) { %>
+                <i class="fas fa-folder-open"></i> <%- categories.join(' ') %>&nbsp;&nbsp;<% } %>
+            <% if (page.tags && page.tags.length) { %>
+                <i class="fas fa-tags"></i> <%- tags.join(' ') %>&nbsp;&nbsp;<% } %>
+                <i class="fas fa-calendar"></i> <%= page.date.format(config.date_format) %>
+        </p>
+    </div>
+    <%- page.content %>
+    <div class="post-nav container-fluid row">
+        <div class="nav-prev col-6">
+        <% if (page.prev){ %>
+            <a href="<%- url_for(page.prev.path) %>"><i class="fas fa-arrow-left"></i>&nbsp;<%= page.prev.title %></a>
+        <% } %>
+        </div><div class="nav-next col-6 text-right">
+        <% if (page.next){ %>
+            <a href="<%- url_for(page.next.path) %>"><%= page.next.title %>&nbsp;<i class="fas fa-arrow-right"></i></a>
+        <% } %>
+        </div>
+    </div>
+</div>

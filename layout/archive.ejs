@@ -1,0 +1,21 @@
+<div class="col-3 sidebar sidebar-offcanvas">
+    <%- partial("_widget/categories") %>
+    <div class="space"></div>
+    <%- partial("_widget/tags") %>
+</div>
+<%
+    var title = '不积跬步，无以至千里。';
+    if (is_category()) { title = '分类 - ' + page.category; }
+    else if (is_tag()) { title = '标签 - ' + page.tag; }
+%>
+<div class="col-9 main-content post-content row">
+    <div class="post-header"><h1><%= title %></h1></div>
+    <% if (!is_archive()) {  page.posts.sort('date', 1).each(function(item){ %>
+        <div class="col-4 post-entry">
+            <h5 class="index-title">
+                <a href="<%- url_for(item.path) %>"><%= item.title %></a>
+            </h5>
+            <div class="post-date"><%= item.date.format(config.date_format) %></div>
+        </div>
+    <% }) } %>
+</div>

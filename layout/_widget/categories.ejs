@@ -1,0 +1,13 @@
+<div class="card toc">
+    <div class="card-header">
+        <div>分类</div>
+    </div>
+    <div class="card-body">
+        <% site.categories.forEach(function(category){ %>
+        <% if (is_category(category.name)) { %>
+            <span class="active-category"><%= category.name %></span>
+        <% } else { %>
+            <a href="<%- url_for(category.path) %>"><%= category.name %></a>
+        <% } } ) %>
+    </div>
+</div>

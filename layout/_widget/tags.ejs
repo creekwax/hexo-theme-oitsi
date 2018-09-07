@@ -1,0 +1,13 @@
+<div class="card tags">
+    <div class="card-header">
+        <div>标签</div>
+    </div>
+    <div class="card-body">
+        <% site.tags.forEach(function(tag){ %>
+        <% if (is_tag(tag.name)) { %>
+            <span class="active-tag"><%= tag.name %></span>
+        <%} else { %>
+            <a href="<%- url_for(tag.path) %>"><%= tag.name %></a>
+        <%} })%>
+    </div>
+</div>
