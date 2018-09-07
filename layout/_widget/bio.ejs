@@ -1,13 +1,13 @@
 <div class="card bio">
     <div class="card-header">
-        <div>个人印象</div>
+        <div><%= __('Impression')%></div>
     </div>
     <div class="card-body">
         <div class="image"><img class="actual-image" src="<%- config.bio.avatar %>"></div>
         <div class="intro"><%= config.bio.nickname %><p><%= config.bio.intro %></p></div>
         <div class="contacts">
             <% for(var i in config.bio.social) { %>
-                <p><%= i %>: 
+                <p><%= __(i) %>: 
                     <% if (i == "Mail") { %>
                         <a href="mailto:<%- config.bio.social[i] %>" target="_blank"><%= config.bio.social[i] %></a>
                     <% } else { %>

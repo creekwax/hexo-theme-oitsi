@@ -16,21 +16,21 @@
         <h1><%= page.title %></h1>
         <p class="meta-line">
             <% if (page.categories && page.categories.length) { %>
-                <i class="fas fa-folder-open"></i> <%- categories.join(' ') %>&nbsp;&nbsp;<% } %>
+                <i class="far fa-folder-open"></i>&nbsp;<%- categories.join(' ') %>&nbsp;&nbsp;<% } %>
             <% if (page.tags && page.tags.length) { %>
-                <i class="fas fa-tags"></i> <%- tags.join(' ') %>&nbsp;&nbsp;<% } %>
-                <i class="fas fa-calendar"></i> <%= page.date.format(config.date_format) %>
+                <i class="far fa-bookmark"></i>&nbsp;<%- tags.join(' ') %>&nbsp;&nbsp;<% } %>
+                <i class="far fa-calendar-alt"></i>&nbsp;<%= page.date.format(config.date_format) %>
         </p>
     </div>
     <%- page.content %>
     <div class="post-nav container-fluid row">
         <div class="nav-prev col-6">
         <% if (page.prev){ %>
-            <a href="<%- url_for(page.prev.path) %>"><i class="fas fa-arrow-left"></i>&nbsp;<%= page.prev.title %></a>
+            <a href="<%- url_for(page.prev.path) %>"><i class="far fa-arrow-alt-circle-left"></i>&nbsp;&nbsp;<%= page.prev.title %></a>
         <% } %>
         </div><div class="nav-next col-6 text-right">
         <% if (page.next){ %>
-            <a href="<%- url_for(page.next.path) %>"><%= page.next.title %>&nbsp;<i class="fas fa-arrow-right"></i></a>
+            <a href="<%- url_for(page.next.path) %>"><%= page.next.title %>&nbsp;&nbsp;<i class="far fa-arrow-alt-circle-right"></i></a>
         <% } %>
         </div>
     </div>
