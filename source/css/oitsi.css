@@ -179,19 +179,21 @@ div.space {
     font-weight: 700;
 }
 
-.post-entry .post-date {
-    font-size: 14px;
+.post-entry .index-desc {
+    font-size: 90%;
+    margin-top: 0.4rem;
 }
 
 .post-content .post-header {
     width: 100%;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .post-content .post-header .meta-line {
-    margin-top: .2rem;
+    margin-top: 0.4rem;
+    margin-bottom: 0;
     padding: 0;
-    font-size: 85%;
+    font-size: 90%;
 }
 
 .post-content p {
