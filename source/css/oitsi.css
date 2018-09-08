@@ -201,8 +201,7 @@ div.space {
 }
 
 .post-content img {
-    max-width: 75%;
-    border: 1px solid rgba(0, 0, 0, 0.125);
+    max-width: 80%;
     margin: auto;
     display: block;
 }
