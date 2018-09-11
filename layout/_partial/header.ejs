@@ -5,15 +5,15 @@
         </a>
         <div class="justify-content-end">
             <ul id="navbar-links" class="navbar-nav active">
-                <% for (var i in config.menu) { %>
+                <% for (var i in theme.menu) { %>
                     <li class="nav-item">
-                        <a  <% if (is_current(config.menu[i].directory) || ((is_home() || is_post()) && config.menu[i].page == "Blog") || (is_archive() && config.menu[i].page == "Archives")) { %>
+                        <a  <% if (is_current(theme.menu[i].directory) || ((is_home() || is_post()) && theme.menu[i].page == "Blog") || (is_archive() && theme.menu[i].page == "Archives")) { %>
                                 class="nav-link active"
                             <% } else { %>
                                 class="nav-link"
                             <% } %>
-                            href="<%- url_for(config.menu[i].directory) %>">
-                            <%= __(config.menu[i].page) %>
+                            href="<%- url_for(theme.menu[i].directory) %>">
+                            <%= __(theme.menu[i].page) %>
                         </a>
                     </li>
                 <% } %>
