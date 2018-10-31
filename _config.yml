@@ -5,9 +5,3 @@ menu:
     directory: archives/
   - page: About
     directory: about/
-bio:
-  intro: 程序酱 运动爱好者
-  nickname: creekwax
-  social:
-    Mail: creekwax@gmail.com 
-    Github: https://github.com/creekwax
