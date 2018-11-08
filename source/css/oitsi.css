@@ -97,7 +97,7 @@ div.blog {
 }
 
 .main-content .post-entry {
-    padding: 1rem 1.5rem;
+    padding: .75rem 1rem;
 }
 
 .post-entry h5 {
@@ -133,6 +133,11 @@ div.blog {
     max-width: 80%;
     margin: auto;
     display: block;
+}
+
+.post-content span.sep {
+    display: inline-block;
+    width: 1em;
 }
 
 .post-nav {

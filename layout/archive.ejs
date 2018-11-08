@@ -18,12 +18,14 @@
         <div class="space"></div>
         <% site.categories.forEach(function(category){ %>
             <a href="<%- url_for(category.path) %>"><%= category.name %></a>
+            <span class="sep"></span>
         <% } ) %>
         <div class="space"></div>
         <h1>标签</h1>
         <div class="space"></div>
         <% site.tags.forEach(function(tag){ %>
             <a href="<%- url_for(tag.path) %>"><%= tag.name %></a>
+            <span class="sep"></span>
         <% })%>
     <% } %>
 </div>
