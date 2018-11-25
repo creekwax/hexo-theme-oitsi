@@ -15,7 +15,7 @@ years = Object.keys(data).sort(function(a, b){ return b-a; })
     <% years.forEach(function(year) { %>
         <h2><%= year %></h2>
     <% data[year].forEach(function(item) { %>
-        <div class="col-4 post-entry">
+        <div class="col-md-4 col-sm-6 col-xs-12 post-entry">
             <h5 class="index-title">
                 <a href="<%- url_for(item.path) %>"><%= item.title %></a>
             </h5>

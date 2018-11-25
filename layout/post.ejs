@@ -22,12 +22,12 @@
     <%- page.content %>
     <div class="post-nav container-fluid row">
         <div class="nav-prev col-6">
-        <% if (page.prev){ %>
-            <a href="<%- url_for(page.prev.path) %>"><i class="far fa-arrow-alt-circle-left"></i>&nbsp;&nbsp;<%= page.prev.title %></a>
+        <% if (page.next){ %>
+            <a href="<%- url_for(page.next.path) %>"><i class="far fa-arrow-alt-circle-left"></i>&nbsp;&nbsp;<%= page.next.title %></a>
         <% } %>
         </div><div class="nav-next col-6 text-right">
-        <% if (page.next){ %>
-            <a href="<%- url_for(page.next.path) %>"><%= page.next.title %>&nbsp;&nbsp;<i class="far fa-arrow-alt-circle-right"></i></a>
+        <% if (page.prev){ %>
+            <a href="<%- url_for(page.prev.path) %>"><%= page.prev.title %>&nbsp;&nbsp;<i class="far fa-arrow-alt-circle-right"></i></a>
         <% } %>
         </div>
     </div>

@@ -1,23 +1,28 @@
 <header>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark justify-content-between">
-        <a class="navbar-brand" href="/">
-            <span class="brand-name"><%= config.title %></span>
-        </a>
-        <div class="justify-content-end">
-            <ul id="navbar-links" class="navbar-nav active">
-                <% for (var i in theme.menu) { %>
-                    <li class="nav-item">
-                        <a  <% if (is_current(theme.menu[i].directory) || ((is_home() || is_post()) && theme.menu[i].page == "Blog") || (is_archive() && theme.menu[i].page == "Archives")) { %>
-                                class="nav-link active"
-                            <% } else { %>
-                                class="nav-link"
-                            <% } %>
-                            href="<%- url_for(theme.menu[i].directory) %>">
-                            <%= __(theme.menu[i].page) %>
-                        </a>
-                    </li>
-                <% } %>
-            </ul>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-collapse" aria-controls="nav-collapse" aria-expanded="false" aria-label="">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse nav-content" id="nav-collapse">
+            <a class="navbar-brand" href="/">
+                <span class="brand-name"><%= config.title %></span>
+            </a>
+            <div class="nav-links">
+                <ul id="navbar-links" class="navbar-nav active">
+                    <% for (var i in theme.menu) { %>
+                        <li class="nav-item">
+                            <a  <% if (is_current(theme.menu[i].directory) || ((is_home() || is_post()) && theme.menu[i].page == "Blog") || (is_archive() && theme.menu[i].page == "Archives")) { %>
+                                    class="nav-link active"
+                                <% } else { %>
+                                    class="nav-link"
+                                <% } %>
+                                href="<%- url_for(theme.menu[i].directory) %>">
+                                <%= __(theme.menu[i].page) %>
+                            </a>
+                        </li>
+                    <% } %>
+                </ul>
+            </div>
         </div>
     </nav>
 </header>
