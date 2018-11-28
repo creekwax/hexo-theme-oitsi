@@ -21,7 +21,7 @@ header .navbar {
     box-shadow: 0 0 2px 2px rgba(0,0,0,.14), 0 2px 4px 2px rgba(0,0,0,.28);
     padding-top: .2em;
     padding-bottom: .2em;
-    font-family: "work Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "work Sans", "Helvetica Neue", Helvetica, Arial, sans-serif, "STXiHei";
 }
 
 header .navbar .nav-content {
@@ -31,12 +31,15 @@ header .navbar .nav-content {
     vertical-align: middle;
 }
 
+header .navbar-brand {
+    padding: 0;
+    font-size: 2rem;
+}
+
 header .navbar .brand-name {
     color: #fff;
-    font-weight: 300;
-    line-height: 1.7em;
-    height: 1.7em;
-    padding: 0 .7em;
+    height: 2em;
+    font-family: "FangSong";
 }
 
 header .navbar .brand-name::before {
@@ -52,35 +55,29 @@ header .navbar-toggler {
     line-height: 1.5em;
 }
 
-
-header #navbar-links {
-    /* margin-right: 12em; */
-}
-
 header .navbar-dark .navbar-nav .nav-link {
     color: #fff;
 }
 
 header .navbar-dark .navbar-nav .nav-link:hover {
     color: #de7d40;
+    background-color: #fff;
 }
 
 .navbar-expand-md .navbar-nav .nav-link {
-    display: block;
-    padding: .5rem 1rem;
+    padding: .15rem .85rem;
+    margin: .25rem .25rem;
+    border-radius: 4px;
 }
 
 header .navbar-dark .navbar-nav .nav-link.active {
     color: #de7d40;
-}
-
-header .navbar a {
-    font-weight: 500;
+    background-color: #eee;
 }
 
 header .navbar a.nav-link {
     color: #fff;
-    font-size: .9em;
+    font-size: 1em;
 }
 
 #navbar-links.active {
@@ -144,7 +141,7 @@ div.blog {
 }
 
 .post-content img {
-    max-width: 80%;
+    max-width: 100%;
     margin: auto;
     display: block;
 }
@@ -225,6 +222,12 @@ table {
     border-right: 1px solid #286ac7;
     border-bottom: 1px solid #286ac7;
     margin-bottom: 1rem;
+}
+
+blockquote p {
+    padding: 0.5rem 0 0.5rem 1rem;
+    border-left: 4px solid #42b983;
+    background-color: #dbe8e2;
 }
 
 th, td {
