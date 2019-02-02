@@ -1,7 +1,7 @@
 <%
-    var title = '归档';
-    if (is_category()) { title = '分类: ' + page.category; }
-    else if (is_tag()) { title = '标签: ' + page.tag; }
+    var title = __('Archives');
+    if (is_category()) { title = 'CATEGORY: ' + page.category; }
+    else if (is_tag()) { title = 'TAG: ' + page.tag; }
 %>
 <div class="main-content post-content row">
     <% if (!is_archive()) { %>  
@@ -14,14 +14,15 @@
                 <div class="post-date"><%= item.date.format(config.date_format) %></div>
             </div>
     <% }) } else { %>
-        <h1>分类</h1>
+        <h1>Categories</h1>
         <div class="space"></div>
         <% site.categories.forEach(function(category){ %>
             <a href="<%- url_for(category.path) %>"><%= category.name %></a>
             <span class="sep"></span>
         <% } ) %>
         <div class="space"></div>
-        <h1>标签</h1>
+        <div class="space"></div>
+        <h1>Tags</h1>
         <div class="space"></div>
         <% site.tags.forEach(function(tag){ %>
             <a href="<%- url_for(tag.path) %>"><%= tag.name %></a>
