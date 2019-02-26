@@ -16,16 +16,18 @@
     <% }) } else { %>
         <h1>Categories</h1>
         <div class="space"></div>
+        <span class="sep"></span>
         <% site.categories.forEach(function(category){ %>
-            <a href="<%- url_for(category.path) %>"><%= category.name %></a>
+            <a href="<%- url_for(category.path) %>"><%= category.name %> (<%= category.length %>)</a>
             <span class="sep"></span>
         <% } ) %>
         <div class="space"></div>
         <div class="space"></div>
         <h1>Tags</h1>
         <div class="space"></div>
+        <span class="sep"></span>
         <% site.tags.forEach(function(tag){ %>
-            <a href="<%- url_for(tag.path) %>"><%= tag.name %></a>
+            <a href="<%- url_for(tag.path) %>"><%= tag.name %> (<%= tag.length %>)</a>
             <span class="sep"></span>
         <% })%>
     <% } %>
